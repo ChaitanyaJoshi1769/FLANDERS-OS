@@ -13,6 +13,7 @@ import { AutomationModule } from './modules/automation/automation.module';
 import { SafetyModule } from './modules/safety/safety.module';
 import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { HealthModule } from './modules/health/health.module';
+import { FleetIntelligenceModule } from './modules/fleet-intelligence/fleet-intelligence.module';
 import { typeOrmConfig } from './database/typeorm.config';
 
 @Module({
@@ -29,6 +30,7 @@ import { typeOrmConfig } from './database/typeorm.config';
     FleetsModule,
     MachinesModule,
     TelemetryModule,
+    FleetIntelligenceModule,
     MaintenanceModule,
     AutomationModule,
     SafetyModule,
