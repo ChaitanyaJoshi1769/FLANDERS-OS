@@ -39,7 +39,7 @@ export class TelemetryService {
       sensorName: eventData.sensorName,
       value: eventData.value,
       unit: eventData.unit,
-      status: this.determineStatus(eventData.value, eventData.minThreshold, eventData.maxThreshold),
+      status: this.determineStatus(eventData.value, eventData.minThreshold, eventData.maxThreshold) as any,
       timestamp: new Date(),
       metadata: eventData.metadata || {},
     });
@@ -137,14 +137,13 @@ export class TelemetryService {
   }
 
   async getAnomalies(machineId: string, limit: number = 50) {
-    const anomalies = await this.sensorEventRepository.find({
-      where: {
-        machineId,
-        status: 'critical' || 'degraded',
-      },
-      order: { timestamp: 'DESC' },
-      take: limit,
-    });
+    const anomalies = await this.sensorEventRepository
+      .createQueryBuilder('event')
+      .where('event.machineId = :machineId', { machineId })
+      .andWhere('event.status IN (:...statuses)', { statuses: ['critical', 'degraded'] })
+      .orderBy('event.timestamp', 'DESC')
+      .take(limit)
+      .getMany();
 
     return anomalies;
   }

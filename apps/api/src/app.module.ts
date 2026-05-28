@@ -9,6 +9,7 @@ import { FleetsModule } from './modules/fleets/fleets.module';
 import { MachinesModule } from './modules/machines/machines.module';
 import { TelemetryModule } from './modules/telemetry/telemetry.module';
 import { MaintenanceModule } from './modules/maintenance/maintenance.module';
+import { AutonomousModule } from './modules/autonomous/autonomous.module';
 import { AutomationModule } from './modules/automation/automation.module';
 import { SafetyModule } from './modules/safety/safety.module';
 import { AnalyticsModule } from './modules/analytics/analytics.module';
@@ -32,6 +33,7 @@ import { typeOrmConfig } from './database/typeorm.config';
     TelemetryModule,
     FleetIntelligenceModule,
     MaintenanceModule,
+    AutonomousModule,
     AutomationModule,
     SafetyModule,
     AnalyticsModule,

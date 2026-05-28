@@ -57,7 +57,7 @@ export class FleetsService {
       inMaintenanceMachines: machines.filter(
         (m) => m.status === 'maintenance'
       ).length,
-      offlineMachines: machines.filter((m) => m.status === 'offline').length,
+      offlineMachines: machines.filter((m) => m.status === 'unknown').length,
       averageBatteryLevel:
         machines.reduce((sum, m) => sum + (m.batteryLevel || 0), 0) /
         (machines.length || 1),
