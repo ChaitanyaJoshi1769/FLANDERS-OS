@@ -16,6 +16,11 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { HealthModule } from './modules/health/health.module';
 import { FleetIntelligenceModule } from './modules/fleet-intelligence/fleet-intelligence.module';
 import { IntegrationModule } from './modules/integration/integration.module';
+import { CollaborationModule } from './modules/collaboration/collaboration.module';
+import { DigitalTwinModule } from './modules/digital-twin/digital-twin.module';
+import { FleetOptimizationModule } from './modules/fleet-optimization/fleet-optimization.module';
+import { IndustrySpecificModule } from './modules/industry-specific/industry-specific.module';
+import { MarketplaceModule } from './modules/marketplace/marketplace.module';
 import { typeOrmConfig } from './database/typeorm.config';
 
 @Module({
@@ -39,6 +44,11 @@ import { typeOrmConfig } from './database/typeorm.config';
     SafetyModule,
     AnalyticsModule,
     IntegrationModule,
+    CollaborationModule,
+    DigitalTwinModule,
+    FleetOptimizationModule,
+    IndustrySpecificModule,
+    MarketplaceModule,
     HealthModule,
   ],
 })
